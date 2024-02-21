@@ -1,0 +1,32 @@
+{
+    "rewrites": [
+        {
+            "source": "/tryon",
+            "destination": "https://twinshirt.vercel.app"
+        },
+        {
+            "source": "/tryon/:path*",
+            "destination": "https://twinshirt.vercel.app/:path*"
+        },
+        {
+            "source": "/twinLogo.png",
+            "destination": "https://twinshirt.vercel.app/twinLogo.png"
+        },
+        {
+            "source": "/font.json",
+            "destination": "https://twinshirt.vercel.app/font.json"
+        },
+        {
+            "source": "/environment.hdr",
+            "destination": "https://twinshirt.vercel.app/environment.hdr"
+        },
+        {
+            "source": "/avatars/:path*",
+            "destination": "https://twinshirt.vercel.app/avatars/:path*"
+        },
+        {
+            "source": "/bodyutils.wasm",
+            "destination": "https://twinshirt.vercel.app/bodyutils.wasm"
+        }
+    ]
+}
