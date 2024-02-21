@@ -26,7 +26,7 @@ const Header: NextComponentType<NextPageContext, {}, Props> = (
   return (
     <div
       id='view'
-      className='absolute top-0 left-0 z-10 h-full overflow-hidden bg-transparent'
+      className='absolute top-0 left-0 z-10 overflow-hidden bg-transparent'
     >
       <div className='uppercase cursor-default justify-center items-center'>
         <AnimatedTitle

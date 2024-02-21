@@ -1,8 +1,9 @@
-'use client'
+'use client';
 
 import Gallery from '@/components/elements/Gallery';
 import { TinyMockup } from '@/components/elements/Mockups';
 import Player from '@/components/elements/Player';
+import Scene from '@/components/elements/Scene';
 import { Titles } from '@/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,14 +11,8 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0 -z-10 p-24 md:p-[26rem] '>
-        <Image
-          src='/logo-no-bg.png'
-          alt='tile'
-          width={2000}
-          height={2000}
-          className='md:mt-10'
-        />
+      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0'>
+        <Scene />
       </div>
       <main className='relative min-h-screen min-w-screen bg-white text-black'>
         {/* slide2 */}
@@ -36,7 +31,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='px-10 sm:-mt-32 md:max-w-96 mt-0'>
+          <div className='md:px-10 sm:-mt-48 md:max-w-96 mt-0'>
             <p className='text-lg font-medium text-justify leading-7 max-w-xl'>
               Step into the future of fashion with our revolutionary AR Kiosk
               Technologies! Experience a new dimension of virtual cloth try-on,
@@ -132,7 +127,7 @@ export default function Home() {
           ))}
         </div>
         {/* slide5 */}
-        <div className='h-full flex m-4 w-auto md:pl-14'>
+        <div className='h-full flex m-4 w-auto md:pl-14 items-center justify-center'>
           <div>
             <h3 className='text-3xl sm:text-5xl md:text-7xl font-medium uppercase'>
               Gallery
@@ -172,17 +167,8 @@ export default function Home() {
           </div>
         </div>
         {/* slide7 */}
-        <div className='h-full py-4 w-screen flex items-center justify-center'>
-          {/* <Scene /> */}
-          <Link href='#view'>
-            <Image
-              src='/favicon.png'
-              alt='logo'
-              width={100}
-              height={100}
-              className='drop-shadow-2xl rotate-12'
-            />
-          </Link>
+        <div className='h-full py-4 w-screen'>
+          <Scene />
         </div>
       </main>
     </>

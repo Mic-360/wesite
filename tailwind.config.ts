@@ -16,6 +16,9 @@ module.exports = {
             },
         },
         extend: {
+            maxWidth: {
+                '3xl': '1432px',
+            },
             fontFamily: {
                 archivo: ['var(--font-archivo)'],
                 arcexp: ['var(--font-archivo-expanded)'],

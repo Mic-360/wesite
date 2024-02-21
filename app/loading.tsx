@@ -6,28 +6,29 @@ import Image from 'next/image';
 import { ReactNode, useEffect, useState } from 'react';
 
 interface Props {
-  children: ReactNode;
+  // children: ReactNode;
 }
 
 const Loading: NextComponentType<NextPageContext, {}, Props> = (
   props: Props
 ) => {
   const [progress, setProgress] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (progress <= 1000) {
       setProgress((prev) => prev + 1);
-    } else {
-      setIsLoaded(true);
     }
+    // else {
+    //   setIsLoaded(true);
+    // }
   }, [progress]);
 
   return (
     <>
-      {isLoaded ? (
+      {/* {isLoaded ? (
         <>{props.children}</>
-      ) : (
+      ) : ( */}
         <div
           className={`h-screen w-screen bg-plume flex flex-col justify-center items-center gap-y-2`}
         >
@@ -42,7 +43,7 @@ const Loading: NextComponentType<NextPageContext, {}, Props> = (
             <Progress value={progress} />
           </div>
         </div>
-      )}
+      {/* )} */}
     </>
   );
 };

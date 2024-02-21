@@ -1,38 +1,17 @@
 'use client';
-import type { NextComponentType, NextPageContext } from 'next';
-import * as THREE from 'three';
-import { useLayoutEffect, useEffect, useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+
 import {
-  useMask,
-  useGLTF,
-  useAnimations,
-  Float,
-  Instance,
-  Instances,
-  CameraControls,
-} from '@react-three/drei';
-import {
-  Lightformer,
   Environment,
-  RandomizedLight,
-  AccumulativeShadows,
+  Lightformer,
   MeshTransmissionMaterial,
+  OrbitControls,
+  useGLTF,
+  useMask,
 } from '@react-three/drei';
-
-type Sphere = [number, string, number, number[]];
-
-const spheres: Sphere[] = [
-  [1, 'red', 0.05, [-4, -1, -1]],
-  [0.75, 'pink', 0.1, [-4, 2, -2]],
-  [1.25, 'purple', 0.2, [4, -3, 2]],
-  [1.5, 'blue', 0.3, [-4, -2, -3]],
-  [2, 'gray', 0.3, [-4, 2, -4]],
-  [2, 'blue', 0.3, [-4, 2, -4]],
-  [1.5, 'red', 0.05, [-4, -1, -1]],
-  [2, 'pink', 0.1, [-4, 2, -2]],
-  [1.5, 'purple', 0.2, [4, -3, 2]],
-];
+import { Canvas } from '@react-three/fiber';
+import type { NextComponentType, NextPageContext } from 'next';
+import { useLayoutEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 interface Props {
   children?: React.ReactNode;
@@ -41,7 +20,6 @@ interface Props {
   scale?: number;
   color?: string;
   speed?: number;
-  spheres?: Sphere[];
 }
 
 const Scene: NextComponentType<NextPageContext, {}, Props> = ({
@@ -59,40 +37,7 @@ const Scene: NextComponentType<NextPageContext, {}, Props> = ({
           args={['#FFFFFF']}
         />
         {/** Glass aquarium */}
-        <Aqua position={[0, -5.2, 0]}>
-          <Instances renderOrder={-1000}>
-            <sphereGeometry args={[1, 64, 64]} />
-            <meshBasicMaterial depthTest={false} />
-            {spheres.map(([scale, color, speed, position], index) => (
-              <Sphere
-                key={index}
-                scale={scale}
-                color={color}
-                speed={speed}
-                position={position as [number, number, number]}
-              />
-            ))}
-          </Instances>
-        </Aqua>
-        {/** Soft shadows */}
-        {/* <AccumulativeShadows
-          temporal
-          frames={100}
-          color=bluelightblue'
-          colorBlend={2}
-          opacity={0.7}
-          scale={60}
-          position={[0, -5, 0]}
-        >
-          <RandomizedLight
-            amount={8}
-            radius={15}
-            ambient={0.5}
-            intensity={1}
-            position={[-5, 10, -5]}
-            size={20}
-          />
-        </AccumulativeShadows> */}
+        <Aqua position={[0, -2.2, 0]} />
         {/** Custom environment map */}
         <Environment resolution={1024}>
           <group rotation={[-Math.PI / 3, 0, 0]}>
@@ -126,11 +71,18 @@ const Scene: NextComponentType<NextPageContext, {}, Props> = ({
             />
           </group>
         </Environment>
-        <CameraControls
-          truckSpeed={0}
-          dollySpeed={0}
+        <OrbitControls
+          enableZoom={false}
+          enablePan={true}
+          enableRotate={true}
+          zoomSpeed={0.5}
+          panSpeed={0.5}
+          rotateSpeed={0.5}
+          minDistance={1}
+          maxDistance={100}
           minPolarAngle={0}
-          maxPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI}
+          target={[0, 0, 0]}
         />
       </Canvas>
     </>
@@ -144,7 +96,6 @@ const Aqua: NextComponentType<NextPageContext, {}, Props> = ({
   ...props
 }: Props) => {
   const ref = useRef<any>();
-  // const { nodes } = useGLTF('/shapes-transformed.glb');
   const { scene } = useGLTF('/logo.glb');
   const stencil = useMask(1, false);
   useLayoutEffect(() => {
@@ -162,9 +113,9 @@ const Aqua: NextComponentType<NextPageContext, {}, Props> = ({
     >
       <mesh
         castShadow
-        scale={[3, 3, 3]}
+        scale={[3.5, 10, 5.5]}
         geometry={(scene.children[0] as THREE.Mesh).geometry}
-        rotation={[Math.PI, Math.PI / 10, Math.PI / 2]}
+        rotation={[0, 0, Math.PI / 2]}
       >
         <MeshTransmissionMaterial
           backside
@@ -178,30 +129,10 @@ const Aqua: NextComponentType<NextPageContext, {}, Props> = ({
           iridescence={1}
           iridescenceIOR={1}
           iridescenceThicknessRange={[0, 1400]}
+          metalness={0.1}
         />
       </mesh>
       <group ref={ref}>{children}</group>
     </group>
-  );
-};
-
-const Sphere: NextComponentType<NextPageContext, {}, Props> = ({
-  position,
-  scale = 1,
-  speed = 0.1,
-  color = 'white',
-}: Props) => {
-  return (
-    <Float
-      rotationIntensity={40}
-      floatIntensity={20}
-      speed={speed / 2}
-    >
-      <Instance
-        position={position}
-        scale={scale}
-        color={color}
-      />
-    </Float>
   );
 };

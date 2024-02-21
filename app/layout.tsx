@@ -47,13 +47,15 @@ export default function RootLayout({
       lang='en'
       className='dark'
     >
-      <body className={archivo.className}>
-        <Loading>
+      <Suspense fallback={<Loading />}>
+        <body className={archivo.className}>
+          {/* <Loading> */}
           <Header />
           {children}
           <Footer />
-        </Loading>
-      </body>
+          {/* </Loading> */}
+        </body>
+      </Suspense>
     </html>
   );
 }
