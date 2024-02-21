@@ -6,6 +6,7 @@ import { Archivo } from 'next/font/google';
 import { Suspense } from 'react';
 import './globals.css';
 import Loading from './loading';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -47,6 +48,7 @@ export default function RootLayout({
       lang='en'
       className='dark'
     >
+      <SpeedInsights />
       <Suspense fallback={<Loading />}>
         <body className={archivo.className}>
           {/* <Loading> */}
