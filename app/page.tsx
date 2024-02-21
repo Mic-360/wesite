@@ -8,12 +8,13 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0 -z-10 p-96'>
+      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0 -z-10 p-24 md:p-96'>
         <Image
           src='/logo-no-bg.png'
           alt='tile'
           width={2000}
           height={2000}
+          className='md:mt-10'
         />
       </div>
       <main className='relative min-h-screen min-w-screen bg-white text-black'>
