@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 import './globals.css';
 import Loading from './loading';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -48,14 +49,13 @@ export default function RootLayout({
       lang='en'
       className='dark'
     >
-      <SpeedInsights />
       <Suspense fallback={<Loading />}>
         <body className={archivo.className}>
-          {/* <Loading> */}
+          <SpeedInsights />
           <Header />
           {children}
           <Footer />
-          {/* </Loading> */}
+          <Analytics />
         </body>
       </Suspense>
     </html>
