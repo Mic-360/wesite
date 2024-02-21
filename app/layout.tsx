@@ -1,12 +1,11 @@
 import Footer from '@/components/elements/Footer';
+import Header from '@/components/elements/Header';
 import { constructMetadata } from '@/lib/utils';
+import type { Viewport } from 'next';
 import { Archivo } from 'next/font/google';
 import { Suspense } from 'react';
-import Loading from './loading';
-import Header from '@/components/elements/Header';
 import './globals.css';
-import Error from './error';
-import type { Viewport } from 'next';
+import Loading from './loading';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -48,13 +47,13 @@ export default function RootLayout({
       lang='en'
       className='dark'
     >
-      <Suspense fallback={<Loading />}>
-          <body className={archivo.className}>
-            <Header />
-            {children}
-            <Footer />
-          </body>
-      </Suspense>
+      <body className={archivo.className}>
+        <Loading>
+          <Header />
+          {children}
+          <Footer />
+        </Loading>
+      </body>
     </html>
   );
 }

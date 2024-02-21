@@ -19,7 +19,7 @@ const Header: NextComponentType<NextPageContext, {}, Props> = (
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsRouted(route);
-    }, 100);
+    }, 300);
     return () => clearTimeout(timeout);
   }, [route]);
 

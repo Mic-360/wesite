@@ -24,7 +24,7 @@ const Gallery: NextComponentType<NextPageContext, {}, Props> = (
   return (
     <div className='flex items-end justify-end'>
       <div className='w-full flex flex-col justify-center'>
-        <div className='rounded-xl overflow-hidden border-2 h-auto max-h-screen-md w-auto max-w-3xl'>
+        <div className='rounded-xl overflow-hidden border-2 h-auto max-h-screen-md w-auto max-w-3xl md:max-w-6xl'>
           <Image
             src={`/Gallery/image${current + 1}.jpg`}
             alt='gallery'
@@ -42,7 +42,7 @@ const Gallery: NextComponentType<NextPageContext, {}, Props> = (
           </h2>
         </div> */}
       </div>
-      <div className='flex justify-end flex-col pb-4'>
+      <div className='flex justify-end flex-col'>
         <Image
           onClick={() => {
             if (current >= 38) {

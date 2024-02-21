@@ -1,3 +1,5 @@
+'use client'
+
 import Gallery from '@/components/elements/Gallery';
 import { TinyMockup } from '@/components/elements/Mockups';
 import Player from '@/components/elements/Player';
@@ -8,7 +10,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0 -z-10 p-24 md:p-96'>
+      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0 -z-10 p-24 md:p-[26rem] '>
         <Image
           src='/logo-no-bg.png'
           alt='tile'

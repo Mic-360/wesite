@@ -1,8 +1,8 @@
 'use client';
 
+import axios from 'axios';
 import type { NextComponentType, NextPageContext } from 'next';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import axios from 'axios';
 
 interface IFormInput {
   name: string;
@@ -31,7 +31,7 @@ const FormData: NextComponentType<NextPageContext, {}, Props> = (
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='flex flex-col gap-y-4 justify-between px-2 items-end pt-24 md:flex-row'
+      className='flex flex-col gap-y-4 justify-between px-2 items-end pt-24 md:flex-row pr-6'
     >
       <div className='grid grid-cols-2 gap-8 md:px-10'>
         <input

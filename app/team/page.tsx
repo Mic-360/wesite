@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Page: NextPage = () => {
   return (
     <main className='min-h-screen min-w-screen bg-white text-black'>
-      <div className='h-auto w-full flex pt-32 md:pt-52 pb-10 items-center justify-center px-4'>
+      <div className='h-auto w-full flex pt-32 md:pt-56 pb-10 items-center justify-center px-4'>
         <article className='text-justify md:text-center max-w-screen-md text-sm md:text-lg font-medium'>
           Every person you see on this post were strangers brought together
           under one roof by{' '}
