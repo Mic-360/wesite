@@ -8,7 +8,14 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0 -z-10'></div>
+      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0 -z-10 p-96'>
+        <Image
+          src='/logo-no-bg.png'
+          alt='tile'
+          width={2000}
+          height={2000}
+        />
+      </div>
       <main className='relative min-h-screen min-w-screen bg-white text-black'>
         {/* slide2 */}
         <div className='h-auto m-8'>

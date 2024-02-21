@@ -50,9 +50,9 @@ export default function RootLayout({
     >
       <Suspense fallback={<Loading />}>
           <body className={archivo.className}>
-            {/* <Header /> */}
+            <Header />
             {children}
-            {/* <Footer /> */}
+            <Footer />
           </body>
       </Suspense>
     </html>
