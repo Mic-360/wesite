@@ -11,8 +11,26 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <div className='sticky bg-white h-screen w-screen flex items-center justify-center top-0'>
+      <div className='sticky bg-transparent h-screen w-screen flex items-center justify-center top-0'>
         <Scene />
+        <div className='absolute bottom-4 rounded-full bg-plume drop-shadow-2xl h-8 w-8 rotate-90 flex justify-center items-center'>
+          <svg
+            width='800px'
+            height='800px'
+            viewBox='0 0 24 24'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-6 w-6 backdrop-blur-3xl animate-pulse'
+          >
+            <path
+              d='M6 12H18M18 12L13 7M18 12L13 17'
+              stroke='#000000'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+          </svg>
+        </div>
       </div>
       <main className='relative min-h-screen min-w-screen bg-white text-black'>
         {/* slide2 */}
@@ -144,7 +162,7 @@ export default function Home() {
           </div>
           <div className='w-2/3 flex items-end justify-end'>
             <form
-              action={`https://formspree.io/f/${process.env.FORMSPREE_ID}`}
+              action={`https://formspree.io/f/mbjbyywa`}
               method='POST'
               className='flex gap-x-4 w-5/6 h-16 border-[1px] border-b-4 bg-transparent justify-end'
             >

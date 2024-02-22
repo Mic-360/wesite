@@ -47,17 +47,17 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className='dark'
+      className='light'
     >
-      <Suspense fallback={<Loading />}>
-        <body className={archivo.className}>
+      <body className={archivo.className}>
+        <Suspense fallback={<Loading />}>
           <SpeedInsights />
           <Header />
           {children}
           <Footer />
           <Analytics />
-        </body>
-      </Suspense>
+        </Suspense>
+      </body>
     </html>
   );
 }

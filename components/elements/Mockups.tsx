@@ -32,7 +32,6 @@ const Mockups: NextComponentType<NextPageContext, {}, Props> = forwardRef<
             ref={ref}
             className='object-cover w-full h-full'
             preload='auto'
-            poster='/soon.png'
             loop
             autoPlay
             muted

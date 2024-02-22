@@ -12,17 +12,17 @@ interface Props {
 const Loading: NextComponentType<NextPageContext, {}, Props> = (
   props: Props
 ) => {
-  const [progress, setProgress] = useState(0);
+  // const [progress, setProgress] = useState(0);
   // const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    if (progress <= 1000) {
-      setProgress((prev) => prev + 1);
-    }
-    // else {
-    //   setIsLoaded(true);
-    // }
-  }, [progress]);
+  // useEffect(() => {
+  //   if (progress <= 1000) {
+  //     setProgress((prev) => prev + 1);
+  //   }
+  //   else {
+  //     setIsLoaded(true);
+  //   }
+  // }, [progress]);
 
   return (
     <>
@@ -40,7 +40,7 @@ const Loading: NextComponentType<NextPageContext, {}, Props> = (
           />
           <h2 className='tracking-widest font-archivo'>Build Beyond Reality</h2>
           <div className='w-1/4'>
-            <Progress value={progress} />
+            <Progress value={Math.floor(Math.random() * 100) + 1} />
           </div>
         </div>
       {/* )} */}

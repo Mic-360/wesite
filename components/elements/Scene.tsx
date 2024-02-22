@@ -4,7 +4,6 @@ import {
   Environment,
   Lightformer,
   MeshTransmissionMaterial,
-  OrbitControls,
   useGLTF,
   useMask,
 } from '@react-three/drei';
@@ -71,7 +70,7 @@ const Scene: NextComponentType<NextPageContext, {}, Props> = ({
             />
           </group>
         </Environment>
-        <OrbitControls
+        {/* <OrbitControls
           enableZoom={false}
           enablePan={true}
           enableRotate={true}
@@ -83,7 +82,7 @@ const Scene: NextComponentType<NextPageContext, {}, Props> = ({
           minPolarAngle={0}
           maxPolarAngle={Math.PI}
           target={[0, 0, 0]}
-        />
+        /> */}
       </Canvas>
     </>
   );
