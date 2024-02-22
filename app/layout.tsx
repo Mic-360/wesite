@@ -1,5 +1,3 @@
-import Footer from '@/components/elements/Footer';
-import Header from '@/components/elements/Header';
 import { constructMetadata } from '@/lib/utils';
 import type { Viewport } from 'next';
 import { Archivo } from 'next/font/google';
@@ -8,6 +6,8 @@ import './globals.css';
 import Loading from './loading';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import Header from '@/components/elements/Header';
+import Footer from '@/components/elements/Footer';
 
 const archivo = Archivo({
   subsets: ['latin'],

@@ -46,7 +46,7 @@ export const AnimatedTitle: NextComponentType<NextPageContext, {}, Props> = ({
         animate={isInView ? 'visible' : 'hidden'}
         transition={{
           staggerChildren: 0.2,
-          delayChildren: delay || 1,
+          delayChildren: delay || 2,
         }}
         aria-hidden
         className='flex justify-around'
