@@ -24,7 +24,7 @@ const Header: NextComponentType<NextPageContext, {}, Props> = (
   }, [route]);
 
   return (
-    <div
+    <header
       id='view'
       className='absolute z-10 top-0 left-0 overflow-hidden bg-transparent'
     >
@@ -53,7 +53,7 @@ const Header: NextComponentType<NextPageContext, {}, Props> = (
           </Link>
         ))}
       </div>
-    </div>
+    </header>
   );
 };
 

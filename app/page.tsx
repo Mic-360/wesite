@@ -9,37 +9,39 @@ export default function Home() {
   return (
     <>
       <main className='relative min-h-screen min-w-screen bg-white text-black'>
-        <div className='h-screen w-screen flex items-center justify-center'>
+        <div className='h-screen w-screen flex flex-col items-center justify-center'>
           {/* <Scene /> */}
           <video
             autoPlay
             muted
             playsInline
-            className='h-screen w-screen'
+            className='h-screen w-screen bg-white'
           >
             <source
               src='/topLogoAnima.mp4'
               type='video/mp4'
             />
           </video>
-          {/* <div className='absolute bottom-4 rounded-full bg-plume drop-shadow-2xl h-8 w-8 rotate-90 flex justify-center items-center'>
-            <svg
-              width='800px'
-              height='800px'
-              viewBox='0 0 24 24'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-6 w-6 backdrop-blur-3xl animate-pulse'
-            >
-              <path
-                d='M6 12H18M18 12L13 7M18 12L13 17'
-                stroke='#000000'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              />
-            </svg>
-          </div> */}
+          <Link href='#footer'>
+            <div className='relative bottom-5 z-10 rounded-full bg-plume shadow-2xl drop-shadow-2xl h-full w-auto p-1 rotate-90 flex justify-center items-center hover:bg-gray-300 hover:border-gray-400'>
+              <svg
+                width='800px'
+                height='800px'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-6 w-6 backdrop-blur-3xl animate-pulse hover:animate-none hover:border-2 rounded-full'
+              >
+                <path
+                  d='M6 12H18M18 12L13 7M18 12L13 17'
+                  stroke='#ffffff'
+                  strokeWidth='2'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                />
+              </svg>
+            </div>
+          </Link>
         </div>
         {/* slide2 */}
         <div className='h-auto m-8'>
@@ -77,11 +79,11 @@ export default function Home() {
               className='h-full rounded-tr-3xl rounded-br-3xl object-cover'
             />
           </div>
-          <div className='h-full flex flex-col justify-between items-start lg:pr-24'>
             <h1 className='text-5xl font-medium md:text-7xl'>
               Our <br />
               Services
             </h1>
+          <div className='h-full flex flex-col justify-between items-start lg:pr-24'>
             <div className='flex flex-col items-start'>
               <span className='text-plumelight text-2xl font-semibold drop-shadow-xl'>
                 1.

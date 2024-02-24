@@ -7,7 +7,7 @@ const Footer: NextComponentType<NextPageContext, {}, Props> = (
   props: Props
 ) => {
   return (
-    <div className='relative bottom-0 h-full w-screen flex flex-col sm:flex-row bg-plume text-white font-normal items-center py-4'>
+    <footer id='footer' className='relative bottom-0 h-full w-screen flex flex-col sm:flex-row bg-plume text-white font-normal items-center py-4'>
       <div className='w-full pl-6 xl:pl-24 justify-start text-lg flex'>
         <h3>Twinverse Technologies © 2023</h3>
       </div>
@@ -69,7 +69,7 @@ const Footer: NextComponentType<NextPageContext, {}, Props> = (
           </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
