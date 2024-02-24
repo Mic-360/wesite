@@ -24,7 +24,7 @@ const Gallery: NextComponentType<NextPageContext, {}, Props> = (
   return (
     <div className='flex items-end justify-end'>
       <div className='w-full flex flex-col justify-center'>
-        <div className='rounded-xl overflow-hidden border-2 h-auto max-h-screen-md w-auto max-w-3xl lg:max-w-screen-2xl'>
+        <div className='rounded-xl overflow-hidden border-2 h-auto max-h-screen-md w-full'>
           <Image
             src={`/Gallery/image${current + 1}.jpg`}
             alt='gallery'

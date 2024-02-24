@@ -1,13 +1,13 @@
+import Footer from '@/components/elements/Footer';
 import { constructMetadata } from '@/lib/utils';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Viewport } from 'next';
 import { Archivo } from 'next/font/google';
 import { Suspense } from 'react';
 import './globals.css';
-import Loading from './loading';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
 import Header from '@/components/elements/Header';
-import Footer from '@/components/elements/Footer';
+import Loading from './loading';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -50,13 +50,13 @@ export default function RootLayout({
       className='light'
     >
       <body className={archivo.className}>
-        <Suspense fallback={<Loading />}>
+        <Loading>
           <SpeedInsights />
           <Header />
           {children}
           <Footer />
           <Analytics />
-        </Suspense>
+        </Loading>
       </body>
     </html>
   );

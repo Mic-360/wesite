@@ -1,7 +1,6 @@
 import Gallery from '@/components/elements/Gallery';
 import { TinyMockup } from '@/components/elements/Mockups';
 import Player from '@/components/elements/Player';
-import Scene from '@/components/elements/Scene';
 import { Titles } from '@/lib/constants';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,8 +10,19 @@ export default function Home() {
     <>
       <main className='relative min-h-screen min-w-screen bg-white text-black'>
         <div className='h-screen w-screen flex items-center justify-center'>
-          <Scene />
-          <div className='absolute bottom-4 rounded-full bg-plume drop-shadow-2xl h-8 w-8 rotate-90 flex justify-center items-center'>
+          {/* <Scene /> */}
+          <video
+            autoPlay
+            muted
+            playsInline
+            className='h-screen w-screen'
+          >
+            <source
+              src='/topLogoAnima.mp4'
+              type='video/mp4'
+            />
+          </video>
+          {/* <div className='absolute bottom-4 rounded-full bg-plume drop-shadow-2xl h-8 w-8 rotate-90 flex justify-center items-center'>
             <svg
               width='800px'
               height='800px'
@@ -29,7 +39,7 @@ export default function Home() {
                 strokeLinejoin='round'
               />
             </svg>
-          </div>
+          </div> */}
         </div>
         {/* slide2 */}
         <div className='h-auto m-8'>
@@ -57,7 +67,7 @@ export default function Home() {
           </div>
         </div>
         {/* slide3 */}
-        <div className='h-screen flex items-center justify-between pr-2 my-8'>
+        <div className='h-screen flex items-center justify-between pr-2 my-20'>
           <div className='h-full pr-10'>
             <Image
               src='/kiosk.png'
@@ -143,7 +153,7 @@ export default function Home() {
           ))}
         </div>
         {/* slide5 */}
-        <div className='h-full flex m-4 w-auto md:pl-14 items-center justify-center'>
+        <div className='h-full flex mx-4 my-20 w-auto md:pl-14 items-center justify-center'>
           <div>
             <h3 className='text-3xl sm:text-5xl md:text-7xl font-medium uppercase'>
               Gallery
@@ -152,26 +162,29 @@ export default function Home() {
           </div>
         </div>
         {/* slide6 */}
-        <div className='h-full my-10 mx-8 flex'>
-          <div className='w-2/3'>
+        <div className='h-full md:my-20 my-8 mx-8 flex flex-col md:flex-row gap-y-8 justify-between'>
+          <div className='max-w-screen-md'>
             <h1 className='text-3xl sm:text-5xl lg:text-7xl text-left drop-shadow-xl'>
               Take your brand to next level? Get in touch with us
             </h1>
           </div>
-          <div className='w-2/3 flex items-end justify-end'>
+          <div className='flex items-end justify-end max-w-2xl w-full'>
             <form
               action={`https://formspree.io/f/mbjbyywa`}
               method='POST'
-              className='flex gap-x-4 w-5/6 h-16 border-[1px] border-b-4 bg-transparent justify-end'
+              className='flex gap-x-4 w-full h-16 border-[1px] border-b-4 bg-transparent justify-end'
             >
               <input
                 type='email'
                 name='email'
                 id='mail'
                 className='w-full pl-2 placeholder:text-plumelight placeholder:text-xs placeholder:sm:text-md placeholder:lg:text-xl placeholder:xl:text-2xl uppercase outline-none bg-transparent'
-                placeholder='Enter your email'
+                placeholder='Enter your email ID'
               />
-              <button type='submit'>
+              <button
+                type='submit'
+                title='Submit'
+              >
                 <Image
                   src='/arrow.svg'
                   alt='arrow'
@@ -184,7 +197,18 @@ export default function Home() {
         </div>
         {/* slide7 */}
         <div className='h-full w-screen'>
-          <Scene />
+          {/* <Scene /> */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src='/bottomLogo.mp4'
+              type='video/mp4'
+            />
+          </video>
         </div>
       </main>
     </>

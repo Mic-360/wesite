@@ -3,32 +3,31 @@
 import { Progress } from '@/components/ui/progress';
 import type { NextComponentType, NextPageContext } from 'next';
 import Image from 'next/image';
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
-  // children: ReactNode;
+  children: React.ReactNode;
 }
 
 const Loading: NextComponentType<NextPageContext, {}, Props> = (
   props: Props
 ) => {
-  // const [progress, setProgress] = useState(0);
-  // const [isLoaded, setIsLoaded] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  // useEffect(() => {
-  //   if (progress <= 1000) {
-  //     setProgress((prev) => prev + 1);
-  //   }
-  //   else {
-  //     setIsLoaded(true);
-  //   }
-  // }, [progress]);
+  useEffect(() => {
+    if (progress <= 1000) {
+      setProgress((prev) => prev + 0.5);
+    } else {
+      setIsLoaded(true);
+    }
+  }, [progress]);
 
   return (
     <>
-      {/* {isLoaded ? (
+      {isLoaded ? (
         <>{props.children}</>
-      ) : ( */}
+      ) : (
         <div
           className={`h-screen w-screen bg-plume flex flex-col justify-center items-center gap-y-2`}
         >
@@ -40,10 +39,10 @@ const Loading: NextComponentType<NextPageContext, {}, Props> = (
           />
           <h2 className='tracking-widest font-archivo'>Build Beyond Reality</h2>
           <div className='w-1/4'>
-            <Progress value={Math.floor(Math.random() * 100) + 1} />
+            <Progress value={progress} />
           </div>
         </div>
-      {/* )} */}
+      )}
     </>
   );
 };
