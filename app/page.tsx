@@ -15,6 +15,7 @@ export default function Home() {
             autoPlay
             muted
             playsInline
+            preload='metadata'
             className='h-screen w-screen bg-white'
           >
             <source
@@ -23,7 +24,7 @@ export default function Home() {
             />
           </video>
           <Link href='#footer'>
-            <div className='relative bottom-5 z-10 rounded-full bg-plume shadow-2xl drop-shadow-2xl h-full w-auto p-1 rotate-90 flex justify-center items-center hover:bg-gray-300 hover:border-gray-400'>
+            <div className='relative bottom-10 z-10 rounded-full bg-plume shadow-2xl drop-shadow-2xl h-full w-auto p-1 rotate-90 flex justify-center items-center hover:bg-gray-300 hover:border-gray-400'>
               <svg
                 width='800px'
                 height='800px'
@@ -79,11 +80,11 @@ export default function Home() {
               className='h-full rounded-tr-3xl rounded-br-3xl object-cover'
             />
           </div>
+          <div className='h-full flex flex-col justify-between items-start lg:pr-24'>
             <h1 className='text-5xl font-medium md:text-7xl'>
               Our <br />
               Services
             </h1>
-          <div className='h-full flex flex-col justify-between items-start lg:pr-24'>
             <div className='flex flex-col items-start'>
               <span className='text-plumelight text-2xl font-semibold drop-shadow-xl'>
                 1.
