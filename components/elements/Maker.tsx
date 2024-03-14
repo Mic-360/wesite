@@ -16,7 +16,6 @@ const VideoMaker: NextComponentType<NextPageContext, {}, Props> = (
         e.currentTarget.playbackRate = 2;
       }}
     >
-      {/* <source src="/topLogoAnima.mp4" type="video/mp4" /> */}
       <source src="/topPlayer.webm" type="video/webm" />
     </video>
   );

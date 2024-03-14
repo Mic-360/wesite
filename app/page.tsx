@@ -147,7 +147,7 @@ export default function Home() {
         <div className="h-full w-screen">
           {/* <Scene /> */}
           <video autoPlay loop muted playsInline>
-            <source src="/bottomLogo.mp4" type="video/mp4" />
+            <source src="/bottomPlayer.webm" type="video/webm" />
           </video>
         </div>
       </main>
