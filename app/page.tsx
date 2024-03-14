@@ -114,7 +114,7 @@ export default function Home() {
             <h3 className="text-3xl sm:text-5xl md:text-7xl font-medium uppercase">
               Gallery
             </h3>
-            {/* <Gallery /> */}
+            <Gallery />
           </div>
         </div>
         {/* slide6 */}
