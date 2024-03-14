@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function constructMetadata({
     title = "Twinverse Technology - Augmented Reality/Virtual Reality Company ",
     description = "We are a dynamic augmented reality/virtual reality company specializing in crafting custom experiences that transport your audience to extraordinary realms, showcasing your brand, products, and locations in ways that leave a lasting impression",
-    image = "/image2.png",
+    image = "/pin.jpg",
     icons = "/favicon.ico",
     url = "https://twinverse.in",
     noIndex = false,
