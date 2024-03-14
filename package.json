@@ -47,5 +47,6 @@
             "next",
             "next/core-web-vitals"
         ]
-    }
+    },
+    "packageManager": "yarn@4.1.1"
 }
