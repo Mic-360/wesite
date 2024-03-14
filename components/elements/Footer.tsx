@@ -12,19 +12,26 @@ const Footer: NextComponentType<NextPageContext, {}, Props> = (
       className="relative bottom-0 h-full w-screen flex flex-col sm:flex-row bg-plume text-white font-normal items-center py-4 md:py-0"
     >
       <div className="w-full pl-4 xl:pl-24 justify-start items-center text-lg flex">
-        <h3>Twinverse Technologies © 2023</h3>
+        <Link
+          href="#view"
+          className="hover:underline underline-offset-4 cursor-pointer decoration-neon"
+        >
+          Twinverse Technologies © 2022
+        </Link>
       </div>
       <div className="w-full flex gap-x-4 justify-evenly uppercase text-sm font-medium px-4">
         <div className="h-32 flex flex-col gap-y-2 justify-center">
           <Link
             className="hover:underline underline-offset-4 decoration-neon"
-            href=""
+            href="https://instagram.com/twinversetech/"
+            target="_top"
           >
             instagram
           </Link>
           <Link
             className="hover:underline underline-offset-4 decoration-neon"
             href=""
+            target="_top"
           >
             discord
           </Link>
@@ -32,13 +39,13 @@ const Footer: NextComponentType<NextPageContext, {}, Props> = (
         <div className="h-32 flex flex-col gap-y-2 justify-center">
           <Link
             className="hover:underline underline-offset-4 decoration-neon"
-            href=""
+            href="/"
           >
-            work
+            Home
           </Link>
           <Link
             className="hover:underline underline-offset-4 decoration-neon"
-            href=""
+            href="/team"
           >
             team
           </Link>
@@ -46,13 +53,14 @@ const Footer: NextComponentType<NextPageContext, {}, Props> = (
         <div className="h-32 flex flex-col gap-y-2 justify-center">
           <Link
             className="hover:underline underline-offset-4 decoration-neon"
-            href=""
+            href="https://www.linkedin.com/company/twinversetech/"
+            target="_top"
           >
-            blog
+            linkedin
           </Link>
           <Link
             className="hover:underline underline-offset-4 decoration-neon"
-            href=""
+            href="/contact-us"
           >
             contact
           </Link>
