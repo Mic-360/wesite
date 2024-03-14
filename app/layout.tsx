@@ -1,18 +1,17 @@
-import Footer from '@/components/elements/Footer';
-import { constructMetadata } from '@/lib/utils';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import type { Viewport } from 'next';
-import { Archivo } from 'next/font/google';
-import { Suspense } from 'react';
-import './globals.css';
-import Header from '@/components/elements/Header';
-import Loading from './loading';
+import Footer from "@/components/elements/Footer";
+import Header from "@/components/elements/Header";
+import { constructMetadata } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Viewport } from "next";
+import { Archivo } from "next/font/google";
+import "./globals.css";
+import Loading from "./loading";
 
 const archivo = Archivo({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-archivo',
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-archivo",
 });
 
 // const archivo_expanded = localFont({
@@ -34,7 +33,7 @@ const archivo = Archivo({
 // });
 
 export const viewport: Viewport = {
-  themeColor: '#ffffff',
+  themeColor: "#ffffff",
 };
 
 export const metadata = constructMetadata();
@@ -45,10 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang='en'
-      className='light'
-    >
+    <html lang="en" className="dark">
       <body className={archivo.className}>
         <Loading>
           <SpeedInsights />

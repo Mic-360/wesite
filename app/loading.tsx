@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { Progress } from '@/components/ui/progress';
-import type { NextComponentType, NextPageContext } from 'next';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { Progress } from "@/components/ui/progress";
+import type { NextComponentType, NextPageContext } from "next";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -32,13 +32,14 @@ const Loading: NextComponentType<NextPageContext, {}, Props> = (
           className={`h-screen w-screen bg-plume flex flex-col justify-center items-center gap-y-2`}
         >
           <Image
-            src='/logo-no-bg.png'
-            alt='logo'
+            src="/logo-no-bg.png"
+            alt="logo"
             width={50}
             height={50}
+            priority
           />
-          <h2 className='tracking-widest font-archivo'>Build Beyond Reality</h2>
-          <div className='w-1/4'>
+          <h2 className="tracking-widest font-archivo">Build Beyond Reality</h2>
+          <div className="w-1/4">
             <Progress value={progress} />
           </div>
         </div>
