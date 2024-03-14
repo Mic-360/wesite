@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { motion, useInView } from 'framer-motion';
-import type { NextComponentType, NextPageContext } from 'next';
-import { ElementType, useRef } from 'react';
+import { motion, useInView } from "framer-motion";
+import type { NextComponentType, NextPageContext } from "next";
+import { ElementType, useRef } from "react";
 
 export const animations = {
   hidden: {
     opacity: 0,
-    y: '90%',
+    y: "90%",
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.5,
-      ease: 'easeOut',
+      duration: 0.6,
+      ease: "easeOut",
     },
   },
 };
@@ -29,7 +29,7 @@ interface Props {
 
 export const AnimatedTitle: NextComponentType<NextPageContext, {}, Props> = ({
   text,
-  el: Wrapper = 'h1',
+  el: Wrapper = "h1",
   className,
   adjust,
   delay,
@@ -39,19 +39,19 @@ export const AnimatedTitle: NextComponentType<NextPageContext, {}, Props> = ({
 
   return (
     <Wrapper className={className}>
-      <span className='sr-only'>{text}</span>
+      <span className="sr-only">{text}</span>
       <motion.span
         ref={ref}
-        initial='hidden'
-        animate={isInView ? 'visible' : 'hidden'}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
         transition={{
           staggerChildren: 0.2,
           delayChildren: delay || 1.5,
         }}
         aria-hidden
-        className='flex justify-around'
+        className="flex justify-around"
       >
-        {text.split('').map((char, i) => (
+        {text.split("").map((char, i) => (
           <motion.span
             key={i}
             variants={animations}
